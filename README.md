@@ -2,10 +2,13 @@
 test repository
 
 ![start](https://user-images.githubusercontent.com/30212683/29582864-8f771f18-877e-11e7-8f33-d10152ef5d35.JPG)
-start
+
+## Widok startu gry, kiedy wędrowiec wyrusza do Puszczy. Ma przed sobą 3 ścieżki do wyboru i wybór artefaktu.
 
 ![place](https://user-images.githubusercontent.com/30212683/29582875-96cc64da-877e-11e7-9f98-6600916b47c7.JPG)
-place
+
+## Widok miejsca w Puszczy, w którym gracz podejmuje decyzję, w którą stronę podążyć.
 
 ![meta](https://user-images.githubusercontent.com/30212683/29582883-9e38a508-877e-11e7-9382-a6127c40d776.JPG)
-meta
+
+## Widok na końcu gry. Gracz dotarł do Białowieży. Wyświetla się wynik końcowy.
