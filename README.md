@@ -5,7 +5,7 @@ test repository
 
 ## Widok startu gry, kiedy wędrowiec wyrusza do Puszczy. Ma przed sobą 3 ścieżki do wyboru i wybór artefaktu.
 
-![place](https://user-images.githubusercontent.com/30212683/29582875-96cc64da-877e-11e7-9f98-6600916b47c7.JPG)
+![miejsce](https://user-images.githubusercontent.com/30212683/29584663-c248d3fe-8784-11e7-8acd-b2f3e3170bb6.JPG)
 
 ## Widok miejsca w Puszczy, w którym gracz podejmuje decyzję, w którą stronę podążyć.
 
