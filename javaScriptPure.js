@@ -1,11 +1,22 @@
 /*
 
-CURRENT TASK:
+OPIS
 
+Zadaniem gracza jest przemierzenie Puszczy Białowieskiej i dotarcie do Białowieży.
+Na starcie gracz posiada w swoim plecaku 7 artefaktów, a po drodze zbiera kolejne.
+W każdym, odwiedzonym miejscu gracz dokonuje wyboru kierunku dalszej drogi.
+Aby ruszyć dalej z danego miejsca musi pokonać przeszkodę. Pomagają mu w tym zebrane artefakty.
+W każdym miejscu, przy wyborze ścieżki, gracz posiada trzy opcje:
+	1. pokonać przeszkodę za pomocą odpowiedniego artefaktu i ruszyć na przód (strata 1 artefaktu),
+	2. przenieść się do miejsca obok (strata 2 artefaktów),
+	3. cofnąć się do poprzedniego miejsca i wybrać inną ścieżkę (bez starty artefaktów),
 
-## wymazać drogę haj - biał na mapie
+Do każdego miejsca przypisana jest przeszkoda (gracz zapamiętuje przypisane przeszkody i na podstawie tego dokonuje kolejnych wyborów).
+Wszystkie artefakty (7 danych na starcie i kolejne zdobywane w odwiedzanych miejscach) dane są losowo.
+W ten sposób przy planowaniu kolejnego ruchu gracz z jednej strony może kontrolować kolejność następujących przeszkód,
+z drugiej strony nie może przewidzieć jakie artefakty będzie posiadał w danym miejscu.
 
-
+Wynik końcowy = zdobyte artefakty + odwiedzone miejsca - wykonane ruchy
 
 
 
@@ -44,7 +55,7 @@ CURRENT TASK:
 		undefined,
 		 0);
 
-     // uruchamia grę, po kliknięciu przez gracza na tekst początkowy
+     // uruchamia grę, po kliknięciu przez gracza na tekst początkowy "Wycie wilków przy pełni księżyca..."
      start.startGame = function() {
 
          document.getElementById("button").style.visibility = "hidden";
@@ -55,7 +66,7 @@ CURRENT TASK:
 
          document.getElementById("command").style.visibility = "visible";
          document.getElementById("command").style.backgroundColor = "#B9E696";
-         document.getElementById("command").innerHTML = "Twoim zadaniem jest dotarcie do Białowieży, położonej w sercu Puszczy. Po drodze będziesz odkrywał nowe miejsca i gromadził artefakty, które pomogą Ci uporać się z napotkanymi trudnościami. Za swoje trudy zostaniesz sowicie wynagrodzony srebrnikami, które będziesz mógł wymienić na jadło i uciechy w białowieskiej karczmie. <br> Pamiętaj! Każdy zachowany artefakt to +1 srebrnik. Każde, nowo odkryte miejsce to +1 srebrnik. Każdy Twój ruch to -1 srebrnik. Wyruszasz z zachodniego krańca Puszczy, z miejscowości Hajnówka i masz 3 tropy do wyboru. W Twoim plecaku jest już 7 artefaktów. Wybierz kolejny artefakt i ruszaj w drogę!";
+         document.getElementById("command").innerHTML = "Przed Tobą wyzwanie, godne prawdziwego wędrowcy. Musisz odnaleźć drogę do Białowieży, położonej w samym sercu Puszczy. Po drodze będziesz odkrywał nowe miejsca i gromadził artefakty, które pomogą Ci uporać się z napotkanymi trudnościami. Za swoje trudy zostaniesz sowicie wynagrodzony srebrnikami, które będziesz mógł wymienić na jadło i uciechy w białowieskiej karczmie. <br> Pamiętaj! Każdy zachowany artefakt to +1 srebrnik. Każde, nowo odkryte miejsce to +1 srebrnik. Każdy Twój ruch to -1 srebrnik. Wyruszasz z zachodniego krańca Puszczy, z miejscowości Hajnówka i masz 3 tropy do wyboru. W Twoim plecaku jest już 7 artefaktów. Wybierz kolejny artefakt i ruszaj w drogę!";
 
          document.getElementById("049").innerHTML = '<img id="player" src="img/player/playerYellow.jpg" />';
          document.getElementById("attributesCounter").style.visibility = "visible";
@@ -115,7 +126,7 @@ CURRENT TASK:
 		};
 
 	var place1Krynoczka = new Place (
-		"Dotarłeś do uroczyska Krynoczka. Stoi tu drewniana cerkiewka, a z ziemi bije cudowne źródełko. Napij się ożywczej wody, wybierz ścieżkę i ruszaj dalej w głąb lasu.",
+		"Dotarłeś do uroczyska Krynoczka. Stoi tu drewniana cerkiewka, a z ziemi bije cudowne źródełko. Napij się ożywczej wody, dodaj kolejny artefakt do plecaka i ruszaj dalej w głąb lasu!",
 		"Zapadł zmierzch. Księżyc skrył się za chmury. Za Krynoczką bór robi się gęsty i ciemny. Nie ma rady. Albo wybierasz STRZAŁKĘ NIEBIESKĄ i wracasz na nocleg do Hajnówki. Albo masz w swoim plecaku PUDEŁKO ZE ŚWIETLIKAMI, które posłuży Ci za latarkę i oświetli ścieżkę. <br> Trzecia, alternatywna opcja to STRZAŁKA CZERWONA, która umożliwia przejście do najbliższego miejsca obok, za cenę dwóch, ostatnio zdobytych artefaktów.",
 		"PUDEŁKO ZE ŚWIETLIKAMI",
 		"053",
@@ -126,7 +137,7 @@ CURRENT TASK:
 
 	var place2NieznanyBor = new Place (
 		"Dotarłeś do miejsca o nazwie Nieznany Bór. Znajduje się tu stara, opuszczona żwirownia. Teren wokół jest zdradliwy. Pełno tu jam i urwisk porośniętych kępami traw i krzaków. Ziemia może łatwo osunąć się pod Twoim ciężarem, więc ostrożnie miarkuj każdy krok na przód. <br> Dobierz kolejny artefakt, a następnie wybierz kierunek, w którym chcesz ruszyć dalej.",
-		"Zagapiłeś się na pięknego jelenia, skubiącego trawkę na skarpie żwirowni. Chciałeś podejść bliżej... chwila nieuwagi... piasek osunął się, a Ty wpadłeś po pasa w bagno! Co prawda wydostałeś się bez trudu, ale Twoje ubranie jest teraz pełne mokrego błota. Albo wracasz do Hajnówki, aby zmieniasz ubranie - STRZAŁKA NIEBIESKA, albo posiadasz w swoim plecaku ZAPAŁKI. Dzięki zapałkom rozpalisz ognisko, osuszysz szybko ubranie i zaraz ruszysz dalej! <br> Trzecia, alternatywna opcja to STRZAŁKA CZERWONA, która umożliwia przejście do najbliższego miejsca obok, za cenę dwóch, ostatnio zdobytych artefaktów.",
+		"Zagapiłeś się na pięknego jelenia, skubiącego trawkę na skarpie żwirowni. Chciałeś podejść bliżej... chwila nieuwagi...i piasek osunął się, a Ty wpadłeś po pasa w bagno! Co prawda wydostałeś się bez trudu, ale Twoje ubranie jest teraz pełne mokrego błota. Albo wracasz do Hajnówki, aby zmieniasz ubranie - STRZAŁKA NIEBIESKA, albo posiadasz w swoim plecaku ZAPAŁKI. Dzięki zapałkom rozpalisz ognisko, osuszysz szybko ubranie i zaraz ruszysz dalej! <br> Trzecia, alternatywna opcja to STRZAŁKA CZERWONA, która umożliwia przejście do najbliższego miejsca obok, za cenę dwóch, ostatnio zdobytych artefaktów.",
 		"ZAPAŁKI",
 		"100",
 		"101",
@@ -145,8 +156,8 @@ CURRENT TASK:
 	     3);
 
 	var place4Szczekotowo = new Place (
-		"Dotarłeś do Rezerwatu Szczekotowo. Znajduje się tu najliczniejsze w Puszczy skupisko dawnych kurhanów. Rytualne kopce są świadectwem o pradwnych plemionach Słowian zamieszkujących te tereny tysiąc lat temu. Sama nazwa Szczekotowo pochodzi od istniejącej tu później wsi, której mieszkańcy wytwarzali węgiel drzewny, smołę i potaż.",
-		"Uups... wspiąłeś się na niewłaściwy kurhan i naruszyłeś spokój jego duchów. Teraz nie chcą Cię wypuścić. Rzucili na Ciebie zaklęcie zapomnienia i dostałeś pomieszania zmysłów. Jedyny sposób na odczarowanie to NALEWKA ENERGETYCZNA. Poszukaj jej w swoim plecaku i czym prędzej napij się. Dzięki jej sekretnej recepturze, składającej się z leśnych ziół, odzyskasz swoje zmysły, a przy okazji, pokrzepisz ciało przed dalszą drogą! <br> Jeśli nie masz nalewki, pozostaje Ci wybór pomiędzy czerowną i niebieską strzałką.",
+		"Dotarłeś do Rezerwatu Szczekotowo. Znajduje się tu najliczniejsze w Puszczy Białowieskiej skupisko dawnych kurhanów. Rytualne kopce są świadectwem o pradawnych plemionach Słowian zamieszkujących te tereny tysiąc lat temu. Sama nazwa Szczekotowo pochodzi od istniejącej tu późniejszym czasie wsi, której mieszkańcy wytwarzali węgiel drzewny, smołę i potaż.",
+		"Uups... wspiąłeś się na niewłaściwy kurhan i naruszyłeś spokój jego duchów. Teraz nie chcą Cię wypuścić. Duchy rzuciły na Ciebie zaklęcie zapomnienia i dostałeś pomieszania zmysłów. Jedyny sposób na odczarowanie to NALEWKA ENERGETYCZNA. Poszukaj jej w swoim plecaku i czym prędzej napij się. Dzięki jej sekretnej recepturze, składającej się z leśnych ziół, odzyskasz swoje zmysły, a przy okazji, pokrzepisz ciało przed dalszą drogą! <br> Jeśli nie masz nalewki, pozostaje Ci wybór pomiędzy czerowną i niebieską strzałką.",
 		"NALEWKA ENERGETYCZNA",
 		"033",
 		"034",
@@ -206,7 +217,7 @@ CURRENT TASK:
 
 	var place10Teremiski = new Place (
 		"Dotarłeś do wsi Teremiski. Z wielką ulgą zobaczyłeś, od dawna niewidziane ludzkie domostwa. Twoje ciało, umęczone wędrówką, potrzebuje odpoczynku i porządnej strawy przed dalszą drogą.",
-		"Niestety wieś okazała się do Ciebie wrogo nastawiona i zostałeś przegoniony z powrotem do lasu. Zawsze gościnni i otwarci do obcych mieszkańcy zostali niedawno oszukani i ograbieni przez grupę nieznanych wędrowców i od tej pory wszystko się zmieniło. Jesteś wyczerpany trudami i przygodami jakie Cię spotkały. Albo masz w plecaku wielki SŁOIK SMALCU, który zaraz postawi Cię na nogi. Albo pozostaje Ci wybór pomiędzy czerowną i niebieską strzałką.",
+		"Niestety mieszkańcy wsi okazali wobec Ciebie wrogość i zostałeś przegoniony z powrotem do lasu. Zawsze gościnni i otwarci do obcych, zostali niedawno oszukani i ograbieni przez grupę nieznanych wędrowców i od tej pory wszystko się zmieniło. <br> Jesteś wyczerpany trudami i przygodami jakie Cię spotkały. Albo masz w plecaku wielki SŁOIK SMALCU, który zaraz postawi Cię na nogi. Albo pozostaje Ci wybór pomiędzy czerowną i niebieską strzałką.",
 		"SŁOIK SMALCU",
 		"062",
 		"063",
@@ -216,7 +227,7 @@ CURRENT TASK:
 
 	var place11Czerlonka = new Place (
 		"Dotarłeś do okolic Czerlonki, dawnej osady robotników leśnych: drwali, smolarzy i karpiniarzy. W prostej lini to połowa odległości między Hajnówką i Białowieżą.",
-		"Przydarzył Ci się nieszczęśliwy wypadek. Niechcący nastąpiłeś na śpiącą pod wielką paprocią żmiję zygzakowatą, a ona, w szoku, mocno wbiła swoje zęby pod Twoim kolanem. Jad natychmiast zadziałał i cała noga zdrętwiała, jak po znieczuleniu u dentysty. Pomóc Ci może tylko MAŚĆ ŚWIERKOWA, która w mig ukoi ranę, wyciągnie jad i przywróci sprawność nogi, abyś mógł ruszyć dalej. <br> Jeśli nie masz w swoim plecaku maści, pozostaje Ci wybór pomiędzy czerowną i niebieską strzałką. ",
+		"Przydarzył Ci się nieszczęśliwy wypadek. Niechcący nastąpiłeś na śpiącą pod wielką paprocią żmiję zygzakowatą, a ona, w szoku, mocno wbiła swoje zęby pod Twoim kolanem. Jad natychmiast zadziałał i cała noga zdrętwiała. Pomóc Ci może tylko MAŚĆ ŚWIERKOWA, która w mig ukoi ranę, wyciągnie jad i przywróci sprawność nogi, abyś mógł ruszyć dalej. <br> Jeśli nie masz w swoim plecaku maści, pozostaje Ci wybór pomiędzy czerowną i niebieską strzałką. ",
 		"MAŚĆ ŚWIERKOWA",
 		"132",
 		"133",
@@ -344,6 +355,10 @@ CURRENT TASK:
 
 		player.positionChange();
 
+		if (placeBack === place12MiejsceMocy) {
+			Place.prototype.placeLeft();
+		}
+
 		Place.prototype.arrowsDisplayCondition();
 		Place.prototype.arrowUpClick();
 		Place.prototype.arrowDownClick();
@@ -452,6 +467,8 @@ CURRENT TASK:
 	};
 
 
+
+
 	// wykonuje czynności po zdarzeniu onclick w górnej strzałce:
 		// zmienia opis miejsca
 		// uruchamia style: pointer na polach zgromadzonych przez gracza atrybutów
@@ -509,6 +526,7 @@ CURRENT TASK:
 	};
 
 
+
 //******** funkcje obsługujące zdarzenie onclick w dolnej, pomarańczowej strzałce:
 
 	// tworzy zdarzenie onclick w dolnej strzałce
@@ -527,7 +545,6 @@ CURRENT TASK:
 			// zdarzenie onclick w czerwonej strzałce (gracz porusza się w bok, do kolejnego miejsca)
 			// zdarzenie onclick w niebieskiej strzałce (gracz porusza się do tyłu, do poprzedniego miejsca)
 		// ukrywa pola atrybutów do wyboru
-
 	Place.prototype.arrowDownActions = function() {
 
 		document.getElementById("command").innerHTML = placeCurrent.arrowDescription;
@@ -755,7 +772,8 @@ CURRENT TASK:
 			}
 		}
 
-		else {
+		else if (indicator === 12)
+		{
 			placeCurrentValue.value13();
 		}
 	};
@@ -1348,7 +1366,7 @@ CURRENT TASK:
             placesVisited.push(player.playerPositions[i]);
         }
       }
-      player.placesVisitedNumber = placesVisited.length;
+      player.placesVisitedNumber = placesVisited.length+1;
     },
 
     // ilość wszystkich ruchów wykonanych przez gracza
