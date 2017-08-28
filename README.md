@@ -31,6 +31,6 @@ Zagraj w grę pobierając plik
 ### Widok miejsca w Puszczy, w którym gracz podejmuje decyzję, w którą stronę podążyć.
 
 
-![meta](https://user-images.githubusercontent.com/30212683/29582883-9e38a508-877e-11e7-9382-a6127c40d776.JPG)
+![przechwytywanie](https://user-images.githubusercontent.com/30212683/29765435-719f620a-8bdb-11e7-8bf6-8be3ba71e8d1.JPG)
 
 ### Widok na końcu gry. Gracz dotarł do Białowieży. Wyświetla się wynik końcowy.
