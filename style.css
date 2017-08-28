@@ -109,7 +109,6 @@ color: #F6F672;
 #button {
   height: 150px;
   width: 600px;
-  /* background-color: #C16E3E; */
   color: #F0DF42;
   font-size: 20px;
   font-weight: 600;
@@ -188,7 +187,3 @@ font {
   float: right;
   padding-right: 20px;
 }
-
-
-
-
