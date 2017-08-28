@@ -12,7 +12,7 @@ W ten sposób przy planowaniu kolejnego ruchu gracz z jednej strony może kontro
 
 Wynik końcowy = zdobyte artefakty + odwiedzone miejsca - wykonane ruchy
 
-Zagraj w grę pobierając plik 
+Zagraj w grę pobierając plik: Na_szlaku_w_Puszczy_Białowieskiej.zip
 
 ![wstep](https://user-images.githubusercontent.com/30212683/29584909-7f53832c-8785-11e7-88c8-3399a52d3831.JPG)
 
