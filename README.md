@@ -42,3 +42,6 @@ Wynik końcowy = zdobyte artefakty + odwiedzone miejsca - wykonane ruchy
 ![przechwytywanie](https://user-images.githubusercontent.com/30212683/29765435-719f620a-8bdb-11e7-8bf6-8be3ba71e8d1.JPG)
 
 #### Widok na końcu gry. Gracz dotarł do Białowieży. Wyświetla się wynik końcowy.
+.
+.
+.
