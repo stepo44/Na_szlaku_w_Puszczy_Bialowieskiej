@@ -16,6 +16,7 @@ Wynik końcowy = zdobyte artefakty + odwiedzone miejsca - wykonane ruchy
 .
 .
 .
+
 ![wstep](https://user-images.githubusercontent.com/30212683/29584909-7f53832c-8785-11e7-88c8-3399a52d3831.JPG)
 
 #### Początek gry.
